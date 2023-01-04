@@ -10,9 +10,11 @@ import {
     faGear,
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
+import config from '~/config';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -30,12 +32,19 @@ const MENU_ITEMS = [
             title: 'Language',
             data: [
                 {
+                    type: 'language',
                     code: 'en',
                     title: 'English',
                 },
                 {
+                    type: 'language',
                     code: 'vi',
                     title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'ja',
+                    title: 'Japan',
                 },
             ],
         },
@@ -88,7 +97,9 @@ function Header() {
     return (
         <header classNames={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="Tiktok" />
+                <Link to={config.routes.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="Tiktok" />
+                </Link>
 
                 <Search />
 

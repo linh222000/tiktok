@@ -13,9 +13,11 @@
     input {
         flex: 1;
         height: 100%;
+        padding-right: 40px;
         color: var(--black);
         font-size: 1.6rem;
         caret-color: var(--primary);
+        font-family: var(--font-family);
         background-color: transparent;
     }
     input:not(:placeholder-shown) ~ .search-btn {
